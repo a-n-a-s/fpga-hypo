@@ -1,0 +1,6 @@
+WARNING: src\dense_layer.v:114: $readmemh(output_weights.mem): Not enough words in the file for the requested range [0:127].
+WARNING: src\dense_layer.v:115: $readmemh(output_bias.mem): Not enough words in the file for the requested range [0:15].
+WARNING: tb\tb_dense_layer.v:165: $readmemh(output_weights.mem): Not enough words in the file for the requested range [0:127].
+WARNING: tb\tb_dense_layer.v:166: $readmemh(output_bias.mem): Not enough words in the file for the requested range [0:15].
+tb_dense_layer: PASS
+tb\tb_dense_layer.v:213: $finish called at 85000 (1ps)

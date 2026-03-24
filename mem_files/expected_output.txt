@@ -1,0 +1,2 @@
+Expected output (float32): 0.898389
+Expected classification: HYPO RISK

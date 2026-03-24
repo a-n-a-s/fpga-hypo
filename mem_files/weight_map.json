@@ -1,0 +1,67 @@
+{
+  "format": "Q8.8 fixed-point",
+  "total_weights": 225,
+  "memory_size_bytes": 450,
+  "layers": [
+    {
+      "name": "conv1_weights",
+      "start_address": 0,
+      "end_address": 23,
+      "count": 24
+    },
+    {
+      "name": "conv1_bias",
+      "start_address": 24,
+      "end_address": 31,
+      "count": 8
+    },
+    {
+      "name": "bn1_gamma",
+      "start_address": 32,
+      "end_address": 39,
+      "count": 8
+    },
+    {
+      "name": "bn1_beta",
+      "start_address": 40,
+      "end_address": 47,
+      "count": 8
+    },
+    {
+      "name": "bn1_mean",
+      "start_address": 48,
+      "end_address": 55,
+      "count": 8
+    },
+    {
+      "name": "bn1_variance",
+      "start_address": 56,
+      "end_address": 63,
+      "count": 8
+    },
+    {
+      "name": "dense1_weights",
+      "start_address": 64,
+      "end_address": 191,
+      "count": 128
+    },
+    {
+      "name": "dense1_bias",
+      "start_address": 192,
+      "end_address": 207,
+      "count": 16
+    },
+    {
+      "name": "output_weights",
+      "start_address": 208,
+      "end_address": 223,
+      "count": 16
+    },
+    {
+      "name": "output_bias",
+      "start_address": 224,
+      "end_address": 224,
+      "count": 1
+    }
+  ]
+}

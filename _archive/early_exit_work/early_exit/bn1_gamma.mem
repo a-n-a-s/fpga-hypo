@@ -1,0 +1,12 @@
+// Memory initialization file
+// Format: hex (Q8.8 fixed-point)
+// Total values: 8
+
+0139
+0164
+00F0
+00F1
+0100
+0100
+00F8
+0150

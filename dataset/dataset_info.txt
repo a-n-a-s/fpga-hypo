@@ -1,0 +1,31 @@
+FPGA Hypoglycemia Prediction Dataset (FIXED)
+==================================================
+
+Configuration:
+  Window size: 16 samples (80 min)
+  Prediction horizon: 6 samples (30 min)
+  Hypoglycemia threshold: 70 mg/dL
+  Safe threshold: 80 mg/dL
+  Quantization: 8-bit (0-255 maps to 0-400 mg/dL)
+
+Split Strategy: Patient-wise (no leakage)
+  Training patients: ['559', '563', '570', '575']
+  Testing patients: ['588', '591']
+
+Balancing: Downsampling majority class
+
+Training Set:
+  Total samples: 7413
+  Class 0 (safe): 2471
+  Class 1 (hypo risk): 4942
+
+Testing Set (balanced 1:1 for evaluation):
+  Total samples: 2596
+  Class 0 (safe): 1298
+  Class 1 (hypo risk): 1298
+
+Recommended Evaluation Metrics:
+  - Precision, Recall, F1-Score
+  - AUC-ROC, AUC-PR (Average Precision)
+  - Confusion Matrix
+  - DO NOT use accuracy (misleading for imbalanced data)

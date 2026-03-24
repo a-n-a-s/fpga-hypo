@@ -1,0 +1,2 @@
+tb_pooling_engine: PASS
+tb\tb_pooling_engine.v:90: $finish called at 65000 (1ps)

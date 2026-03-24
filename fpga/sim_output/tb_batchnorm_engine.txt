@@ -1,0 +1,2 @@
+tb_batchnorm_engine: PASS
+tb\tb_batchnorm_engine.v:148: $finish called at 65000 (1ps)

@@ -1,0 +1,4 @@
+// Test case 17: Expected output
+output_float: 0.011592
+output_q8_8: 3
+classification: 0

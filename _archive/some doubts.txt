@@ -1,0 +1,69 @@
+Good start, but **there is a major issue**.
+
+Your class balance looks **reversed / suspicious**:
+
+* Class 0 = **3,769**
+* Class 1 = **287,542**
+
+That means almost every safe window becomes hypo in 30 min.
+That is unusual.
+
+Most likely one of these happened:
+
+* label logic bug
+* too many duplicate/overlapping windows
+* patient data distribution is very skewed
+* train/test leakage risk
+* SMOTE on time-series windows may be bad
+
+### My advice
+
+**Do not finalize this preprocessing as-is yet.**
+
+### Biggest concerns
+
+1. **Check label code**
+
+   * verify class counts on 1 patient manually
+
+2. **Avoid random split after windowing**
+
+   * use **patient-wise** or **time-wise** split
+   * otherwise leakage can happen
+
+3. **Do not use SMOTE first**
+
+   * for FPGA project, better:
+   * class weights
+   * undersampling
+   * threshold tuning
+
+4. **Overlapping windows may inflate dataset**
+
+   * consecutive windows are very similar
+
+### Better version
+
+* keep 16-sample window
+* keep 30-min horizon
+* keep threshold logic
+* use **time-based split**
+* no SMOTE initially
+* maybe downsample majority class only if needed
+
+### For your project
+
+This dataset idea is **FPGA-friendly**:
+
+* 16 samples is good
+* 8-bit quantization is good
+* binary label is good
+
+But preprocessing must be **fixed carefully**.
+
+### Main point
+
+**Architecture is good, current dataset balance is doubtful.**
+
+First thing:
+manually inspect 20–50 windows and verify labels.

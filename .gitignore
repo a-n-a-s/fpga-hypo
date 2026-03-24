@@ -1,0 +1,53 @@
+# Vivado Projects (too large)
+*_proj/
+*.runs/
+*.cache/
+*.hw/
+*.ip_user_files/
+*.sim/
+
+# Icarus Verilog simulation outputs
+*.vvp
+*.vcd
+*.fst
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+
+# Synthesis intermediate files (keep reports, not projects)
+early_exit_proj/
+xai_proj/
+opt_proj/
+proj/
+
+# Large data files
+dataset/*.csv
+dataset/*.h5
+models/*.h5
+models/*.pkl
+
+# Qwen local files
+.qwen/

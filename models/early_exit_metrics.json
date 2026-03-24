@@ -1,0 +1,20 @@
+{
+  "early_exit_threshold_high": 0.8,
+  "early_exit_threshold_low": 0.2,
+  "early_exit_rate": 92.18027734976889,
+  "full_model": {
+    "f1": 0.8863636363636364,
+    "precision": 0.8013698630136986,
+    "recall": 0.9915254237288136
+  },
+  "early_only": {
+    "f1": 0.8834019204389575,
+    "precision": 0.796044499381953,
+    "recall": 0.9922958397534669
+  },
+  "hybrid": {
+    "f1": 0.8863636363636364,
+    "precision": 0.8013698630136986,
+    "recall": 0.9915254237288136
+  }
+}

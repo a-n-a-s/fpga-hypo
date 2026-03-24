@@ -1,0 +1,111 @@
+{
+  "quantization_comparison": {
+    "float32": {
+      "accuracy": 0.8967642526964561,
+      "precision": 0.8397097625329816,
+      "recall": 0.9807395993836672,
+      "f1": 0.9047619047619048,
+      "auc_roc": 0.9335560694300346,
+      "confusion_matrix": [
+        [
+          1055,
+          243
+        ],
+        [
+          25,
+          1273
+        ]
+      ],
+      "weight_size_bytes": 900,
+      "data_type": "float32",
+      "description": "Original model - Baseline for comparison"
+    },
+    "int16": {
+      "accuracy": 0.8967642526964561,
+      "precision": 0.8397097625329816,
+      "recall": 0.9807395993836672,
+      "f1": 0.9047619047619048,
+      "auc_roc": 0.9335560694300346,
+      "confusion_matrix": [
+        [
+          1055,
+          243
+        ],
+        [
+          25,
+          1273
+        ]
+      ],
+      "weight_size_bytes": 450,
+      "data_type": "int16",
+      "description": "Int16 weight quantization (simulated) - Minimal accuracy loss"
+    },
+    "int8_weights": {
+      "accuracy": 0.8959938366718028,
+      "precision": 0.8390501319261213,
+      "recall": 0.9799691833590138,
+      "f1": 0.9040511727078892,
+      "auc_roc": 0.9333702911436582,
+      "confusion_matrix": [
+        [
+          1054,
+          244
+        ],
+        [
+          26,
+          1272
+        ]
+      ],
+      "weight_size_bytes": 225,
+      "data_type": "int8",
+      "description": "Int8 weight quantization (simulated) - Small accuracy loss"
+    },
+    "int8_input": {
+      "accuracy": 0.8963790446841294,
+      "precision": 0.8382642998027613,
+      "recall": 0.9822804314329738,
+      "f1": 0.9045760908123448,
+      "auc_roc": 0.9333340851517447,
+      "confusion_matrix": [
+        [
+          1052,
+          246
+        ],
+        [
+          23,
+          1275
+        ]
+      ],
+      "weight_size_bytes": 225,
+      "data_type": "int8_input_float32_compute",
+      "description": "Int8 input quantization (FPGA-ready) - Minimal accuracy loss"
+    }
+  },
+  "quantization_technique": {
+    "name": "Post-Training Static Quantization (PTSQ)",
+    "description": "Weights are quantized after training without retraining.\n        - Int8/Int16: Weights scaled to integer range and rounded\n        - Input Quantization: Input glucose values mapped from [0, 400] to [0, 255]\n        - Compute: Can use float32 or fixed-point (Q8.8) for inference",
+    "formula": "quantized = round(float * scale_factor) / scale_factor",
+    "scale_factors": {
+      "int8": 127,
+      "int16": 32767,
+      "input_quantization": "255/400 = 0.6375"
+    }
+  },
+  "optimal_threshold": 0.667,
+  "test_set_size": 2596,
+  "class_distribution": {
+    "safe": 1298,
+    "hypo": 1298
+  },
+  "fpga_recommendation": {
+    "input_format": "uint8 (0-255)",
+    "weight_format": "int8 stored, Q8.8 for compute",
+    "activation_format": "Q8.8 fixed-point",
+    "expected_resources": {
+      "LUTs": "500-1000",
+      "DSP_slices": "2-4",
+      "BRAM": "1-2 KB",
+      "latency_cycles": "<100 @ 50MHz"
+    }
+  }
+}

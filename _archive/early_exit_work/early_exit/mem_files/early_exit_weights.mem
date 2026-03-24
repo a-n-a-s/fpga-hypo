@@ -1,0 +1,20 @@
+// Memory initialization file
+// Format: hex (Q8.8 fixed-point)
+// Total values: 16
+
+FF77
+00E6
+0042
+FEF6
+0054
+0010
+0063
+0078
+001E
+FFCA
+FF8F
+FFCB
+FFD6
+000F
+FFAD
+FF51

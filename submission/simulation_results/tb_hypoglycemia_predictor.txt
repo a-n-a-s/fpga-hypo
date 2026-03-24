@@ -1,0 +1,4 @@
+WARNING: src\dense_layer.v:114: $readmemh(output_weights.mem): Not enough words in the file for the requested range [0:127].
+WARNING: src\dense_layer.v:115: $readmemh(output_bias.mem): Not enough words in the file for the requested range [0:15].
+tb_hypoglycemia_predictor: PASS
+tb\tb_hypoglycemia_predictor.v:313: $finish called at 365000 (1ps)

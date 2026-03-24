@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "f1": 0.8933657519972212,
+    "precision": 0.8134092346616065,
+    "recall": 0.9907550077041603,
+    "latency_cycles": 281
+  },
+  "early_exit_only": {
+    "f1": 0.8834019204389575,
+    "precision": 0.796044499381953,
+    "recall": 0.9922958397534669,
+    "latency_cycles": 150
+  },
+  "hybrid": {
+    "f1": 0.8863636363636364,
+    "precision": 0.8013698630136986,
+    "recall": 0.9915254237288136,
+    "early_exit_rate": 92.18027734976889,
+    "avg_latency_cycles": 160.24383667180277,
+    "latency_reduction": 42.973723604340655
+  }
+}

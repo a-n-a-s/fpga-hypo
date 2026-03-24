@@ -1,0 +1,35 @@
+Yes, finalize it.
+
+Your roadmap is good:
+
+1. **Baseline**
+
+   * simple hypoglycemia predictor
+   * fixed window input
+   * binary output
+
+2. **FPGA version**
+
+   * implement baseline inference
+   * verify with testbench
+
+3. **Early exit**
+
+   * add shallow exit
+   * compare latency/resources/accuracy
+
+4. **XAI**
+
+   * add simple explanation
+   * trend/slope/recent-low reason
+
+5. **Final compare**
+
+   * baseline vs early-exit
+   * with/without XAI
+
+Best approach:
+**working simple model first, then improvements one by one.**
+
+Good final title:
+**FPGA-Based Real-Time Hypoglycemia Prediction with Early Exit and Lightweight XAI**
