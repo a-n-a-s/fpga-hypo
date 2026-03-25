@@ -58,7 +58,7 @@ module hypoglycemia_predictor (
         .glucose_out(input_data)
     );
 
-    conv1d_engine u_conv1d (
+    conv1d_engine_seq u_conv1d (
         .clk(clk),
         .rst_n(rst_n),
         .start(conv_start),
@@ -67,7 +67,7 @@ module hypoglycemia_predictor (
         .output_data(conv_data)
     );
 
-    batchnorm_engine u_batchnorm (
+    batchnorm_engine_seq u_batchnorm (
         .clk(clk),
         .rst_n(rst_n),
         .start(bn_start),
@@ -85,7 +85,7 @@ module hypoglycemia_predictor (
         .output_data(pool_data)
     );
 
-    dense_layer #(
+    dense_layer_seq #(
         .IN_SIZE(8),
         .OUT_SIZE(16),
         .USE_RELU(1),
@@ -99,7 +99,7 @@ module hypoglycemia_predictor (
         .output_data(dense1_data)
     );
 
-    dense_layer #(
+    dense_layer_seq #(
         .IN_SIZE(16),
         .OUT_SIZE(1),
         .USE_RELU(0),
