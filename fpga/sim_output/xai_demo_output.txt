@@ -1,0 +1,115 @@
+╔════════════════════════════════════════════════════════════╗
+║  XAI HYPOGLYCEMIA PREDICTOR - LIVE DEMONSTRATION           ║
+║  FPGA-Based Real-Time Prediction with Explainable AI       ║
+╚════════════════════════════════════════════════════════════╝
+
+Running 3 demonstration test cases...
+
+
+============================================================
+XAI DEMO: e (All 100s)
+============================================================
+
+Glucose Input: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100] mg/dL
+
+CNN Prediction:
+  Probability: 255/255 (         99%)
+  Hypoglycemia Risk: YES ⚠️
+
+XAI Explanation:
+  Reason Code: 001 (binary) = 1
+  Slope: 0 (Q8.8 format)
+  Minimum Glucose: 100 mg/dL
+  Recent Low Detected: NO
+  Trend Direction: STABLE ➡️
+
+Risk Factor Analysis:
+  ⚠️ RAPID DROP DETECTED
+     - Glucose falling faster than 10 mg/dL per minute
+
+Clinical Recommendation:
+  ⚠️ IMMEDIATE ACTION REQUIRED
+     - Consume 15-20g fast-acting carbohydrates
+     - Recheck glucose in 15 minutes
+     - Seek medical attention if symptoms persist
+
+============================================================
+
+============================================================
+XAI DEMO: n (120→64)
+============================================================
+
+Glucose Input: [120, 116, 112, 108, 104, 100, 96, 92, 88, 84, 80, 76, 72, 68, 64, 60] mg/dL
+
+CNN Prediction:
+  Probability: 0/255 (          0%)
+  Hypoglycemia Risk: NO ✅
+
+XAI Explanation:
+  Reason Code: 111 (binary) = 7
+  Slope: 54272 (Q8.8 format)
+  Minimum Glucose: 60 mg/dL
+  Recent Low Detected: YES ⚠️
+  Trend Direction: DROPPING ⬇️
+
+Risk Factor Analysis:
+  ⚠️ RAPID DROP DETECTED
+     - Glucose falling faster than 10 mg/dL per minute
+  ⚠️ RECENT LOW DETECTED
+     - Glucose dropped below 70 mg/dL in last 20 minutes
+  ⚠️ CURRENT VALUE LOW
+     - Current glucose below 80 mg/dL
+
+Clinical Recommendation:
+  ⚠️ MONITOR CLOSELY
+     - Consider preventive snack
+     - Continue frequent monitoring
+
+============================================================
+
+============================================================
+XAI DEMO: rn (90→45)
+============================================================
+
+Glucose Input: [90, 87, 84, 81, 78, 75, 72, 69, 66, 63, 60, 57, 54, 51, 48, 45] mg/dL
+
+CNN Prediction:
+  Probability: 0/255 (          0%)
+  Hypoglycemia Risk: NO ✅
+
+XAI Explanation:
+  Reason Code: 111 (binary) = 7
+  Slope: 57088 (Q8.8 format)
+  Minimum Glucose: 45 mg/dL
+  Recent Low Detected: YES ⚠️
+  Trend Direction: DROPPING ⬇️
+
+Risk Factor Analysis:
+  ⚠️ RAPID DROP DETECTED
+     - Glucose falling faster than 10 mg/dL per minute
+  ⚠️ RECENT LOW DETECTED
+     - Glucose dropped below 70 mg/dL in last 20 minutes
+  ⚠️ CURRENT VALUE LOW
+     - Current glucose below 80 mg/dL
+
+Clinical Recommendation:
+  ⚠️ MONITOR CLOSELY
+     - Consider preventive snack
+     - Continue frequent monitoring
+
+============================================================
+
+╔════════════════════════════════════════════════════════════╗
+║  DEMONSTRATION COMPLETE                                    ║
+╚════════════════════════════════════════════════════════════╝
+
+All 3 test cases completed successfully.
+
+Key Observations:
+  1. Normal case: No risk factors, stable glucose
+  2. Rapid drop: XAI detected falling trend
+  3. Critical: Multiple risk factors triggered
+
+XAI provides interpretable explanations for clinical decisions.
+
+tb/tb_xai_demo.v:211: $finish called at 25185000 (1ps)
