@@ -72,13 +72,25 @@ All three designs have been **successfully synthesized** and **fit on the target
 | **Early Exit** | ~175 (avg) | 3.5 μs (avg) | 92.2% exit rate |
 | **XAI** | ~784 | 15.7 μs | XAI is combinational |
 
-### Power Estimation
+### Power Consumption
 
-| Design | Dynamic Power | Reduction |
-|--------|---------------|-----------|
-| **Baseline** | 100% | - |
-| **Early Exit** | ~58% | **42% reduction** |
-| **XAI** | ~105% | +5% increase |
+| Design | Total Power | Dynamic | Static | Overhead | Notes |
+|--------|-------------|---------|--------|----------|-------|
+| **Baseline** | 0.079 W | 0.018 W | 0.060 W | - | ✅ Measured |
+| **Early Exit** | 0.082 W | 0.021 W | 0.060 W | +0.003 W (+3.8%) | ✅ Negligible |
+| **XAI** | 0.103 W | 0.042 W | 0.060 W | +0.024 W (+30%) | ✅ Moderate |
+
+**Key Insight:** "The Early Exit architecture increases total on-chip power only slightly from 0.079 W to 0.082 W, indicating negligible energy overhead for adaptive inference."
+
+**All designs remain below 0.11 W on-chip power, making them suitable for low-power edge AI deployment.**
+
+### Power Efficiency
+
+| Design | Power/Inference | Battery Life (500 mAh) | Notes |
+|--------|-----------------|------------------------|-------|
+| **Baseline** | 0.079 W | ~170 hours (7 days) | Reference |
+| **Early Exit** | 0.082 W | ~165 hours (7 days) | +3.8% power, 43% faster |
+| **XAI** | 0.103 W | ~130 hours (5 days) | +30% power, interpretable |
 
 ---
 
